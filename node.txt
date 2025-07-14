@@ -1,0 +1,16 @@
+# 1. Instalar NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# 2. Cargar NVM en la sesión actual
+export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+
+# 3. Verificar que nvm se haya instalado correctamente
+nvm --version
+
+# 4. Instalar la última versión LTS de Node.js
+nvm install --lts
+
+# 5. Verificar que Node.js y npm están disponibles
+node -v
+npm -v

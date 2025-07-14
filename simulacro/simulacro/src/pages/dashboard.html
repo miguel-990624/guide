@@ -1,0 +1,40 @@
+<h1>Admin Dashboard</h1>
+<div id="admin-header">Welcome, [Admin Name]</div>
+
+<section>
+    <h2>User List</h2>
+    <table id="user-table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Phone</th>
+            <th>Enroll #</th>
+            <th>Admission Date</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2 id="form-title">Add User</h2>
+    <form id="user-form">
+        <input type="hidden" id="user-id">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <label for="number">Number:</label>
+        <input type="number" id="number" required>
+        <label for="enrollNumber">Enroll Number:</label>
+        <input type="number" id="enrollNumber">
+        <label for="dateOfAdmission">Date Of Admission:</label>
+        <input type="date" id="dateOfAdmission">
+        <input type="hidden" id="role" value="visitor">
+        <button type="submit" id="submit-user">Save</button>
+    </form>
+</section>
+
+<div id="user-message"></div>

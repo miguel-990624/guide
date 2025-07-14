@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "name": "aaa",
+      "price": 2214,
+      "id": "1b24"
+    },
+    {
+      "name": "Tinkami",
+      "price": 11555,
+      "id": "50bd"
+    },
+    {
+      "id": "f19f",
+      "name": "123",
+      "price": 11
+    }
+  ],
+  "users": [],
+  "cart" : []
+}
