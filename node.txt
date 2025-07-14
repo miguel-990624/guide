@@ -1,3 +1,86 @@
+README.md
+markdown
+Copiar código
+# Module 3 Test - SPA Product Management
+
+This is a simple Single Page Application (SPA) built using **HTML**, **CSS**, and **JavaScript** that allows users to:
+
+- Log in and register.
+- View and manage a list of events or products.
+- Add new items.
+- Edit existing items.
+- Add items to a cart (using `sessionStorage`).
+- Register users (with role assignment).
+- Conditional rendering of navigation bar based on login status and role.
+
+## 🗂️ Features
+
+- 🧾 **Login/Register system** with localStorage session.
+- 👤 Role-based logic (admin vs visitor).
+- 🛒 Shopping cart stored in `sessionStorage`.
+- ✏️ Full CRUD for products/events using JSON Server.
+- ⚙️ SPA routing using JS and `history.pushState`.
+
+## 📦 Setup Instructions
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/miguel-990624/module3_test.git
+cd module3_test
+Install json-server globally if you don't have it:
+
+bash
+Copiar código
+npm install -g json-server
+Start the JSON server:
+
+bash
+Copiar código
+json-server --watch db.json --port 3000
+Open the project in your browser:
+
+Open index.html with Live Server or just drag it into your browser.
+
+🛠️ File Structure
+pgsql
+Copiar código
+module3_test/
+│
+├── html/
+│   ├── login.html
+│   ├── register.html
+│   ├── events.html
+│   ├── add.html
+│   ├── edit.html
+│   └── cart.html
+│
+├── script.js
+├── style.css
+├── db.json
+└── README.md
+📌 Notes
+Admins can access "Add" and "Edit" features.
+
+Visitors can only add items to the cart.
+
+Login state is stored using localStorage.
+
+💡 Author
+Miguel Ángel Molina Gutiérrez
+
+¿Quieres que el archivo incluya capturas, ejemplos de usuarios predefinidos o una demo del login?
+
+
+
+
+
+
+
+
+
+-----
+
 # 1. Instalar NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
