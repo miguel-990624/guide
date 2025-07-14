@@ -1,0 +1,115 @@
+const routes = {
+  "/": "./pages/courses.html",
+  "/logIn": "./pages/logIn.html",
+  "/signUp": "./pages/signUp.html",
+  "/dashboard": "./pages/dashboard.html",
+};
+
+// Establish "/" as the default route.
+loadRoute("/");
+
+// Event listener for navbar
+document.body.addEventListener("click", (e) => {
+  if (e.target.matches("[data-link]")) {
+    e.preventDefault();
+
+    loadRoute(e.target.getAttribute("href"));
+  }
+});
+
+// Load html files
+
+async function loadRoute(path) {
+  const route = routes[path];
+  const html = await fetch(route).then((response) => response.text());
+
+  document.getElementById("appContent").innerHTML = html;
+  history.pushState({}, "", path);
+
+  // Remove previous scripts & styles
+  const currentScripts = document.querySelectorAll("script[data-dynamic]");
+  const currentStyles = document.querySelectorAll("link[data-dynamic]");
+  currentScripts.forEach((script) => script.remove());
+  currentStyles.forEach((link) => link.remove());
+
+  // Add scripts & styles dynamically
+
+  // signUp
+
+  if (path == "/") {
+    // New script
+    newScript = document.createElement("script");
+    newScript.dataset.dynamic = true;
+    newScript.src = "./js/courses.js";
+
+    // New styles
+    newStyles = document.createElement("link");
+    newStyles.dataset.dynamic = true;
+    newStyles.rel = "stylesheet";
+    newStyles.href = "./css/courses.css";
+
+    // Push to the DOM
+    document.body.appendChild(newScript);
+    document.head.appendChild(newStyles);
+  } else if (path == "/signUp") {
+    // New script
+    newScript = document.createElement("script");
+    newScript.dataset.dynamic = true;
+    newScript.src = "./js/signUp.js";
+
+    // New styles
+    newStyles = document.createElement("link");
+    newStyles.dataset.dynamic = true;
+    newStyles.rel = "stylesheet";
+    newStyles.href = "./css/signUp.css";
+
+    // Push to the DOM
+    document.body.appendChild(newScript);
+    document.head.appendChild(newStyles);
+  }
+
+  // Login
+  else if (path == "/logIn") {
+    // New script
+    newScript = document.createElement("script");
+    newScript.dataset.dynamic = true;
+    newScript.src = "./js/logIn.js";
+
+    // New styles
+    newStyles = document.createElement("link");
+    newStyles.dataset.dynamic = true;
+    newStyles.rel = "stylesheet";
+    newStyles.href = "./css/logIn.css";
+
+    // Push to the DOM
+    document.body.appendChild(newScript);
+    document.head.appendChild(newStyles);
+  }
+
+  // Dashboard
+  else if (path == "/dashboard") {
+    // New script
+    newScript = document.createElement("script");
+    newScript.dataset.dynamic = true;
+    newScript.src = "./js/dashboard.js";
+
+    // New styles
+    newStyles = document.createElement("link");
+    newStyles.dataset.dynamic = true;
+    newStyles.rel = "stylesheet";
+    newStyles.href = "./css/dashboard.css";
+
+    // Push to the DOM
+    document.body.appendChild(newScript);
+    document.head.appendChild(newStyles);
+  }
+
+}
+
+// Send loadRoute fucntion to the global object "window"
+window.loadRoute = loadRoute;
+window.addEventListener("popstate", () => loadRoute(location.pathname));
+
+en el nav a los anchor les pones pones las rutas que están en el array
+
+<a class="navPage__anchor" href="/" data-link>Courses</a>
